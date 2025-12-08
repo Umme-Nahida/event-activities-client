@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { NavSection } from "@/types/dashboard.interface";
 import { IUserInfo } from "@/types/user.interface";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -27,8 +28,8 @@ const DashboardSidebarContent = ({
     <div className="hidden md:flex h-full w-64 flex-col border-r bg-card">
       {/* Logo/Brand */}
       <div className="flex h-16 items-center border-b px-6">
-        <Link href={dashboardHome} className="flex items-center space-x-2">
-          <span className="text-xl font-bold text-primary">PH Healthcare</span>
+        <Link href={"/"} className="flex items-center space-x-2">
+          <Image src={"https://i.ibb.co.com/TMvPSyKT/Logo.png"} width="100" height="100" alt="logo" />
         </Link>
       </div>
 

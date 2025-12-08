@@ -5,6 +5,7 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 import LogoutButton from "./LogoutButton";
 import { getDefaultDashboardRoute } from "@/lib/auth-utils";
+import Image from "next/image";
 
 const commonNav = [
   { label: "Explore Events", href: "/events" },
@@ -47,9 +48,9 @@ export default async function Navbar({ role = null }) {
 
   const accessToken = await getCookie("accessToken");
   return (
-    <header className="fixed top-6 inset-x-4 h-16 w-full bg-[#0B0E24]/40 backdrop-blur-xl shadow-xl py-6 px-6 rounded-full max-w-7xl mx-auto flex items-center justify-between z-30">
-      <Link href="/" className="flex items-center gap-2 text-white text-2xl font-bold">
-        <span className="text-blue-500">V</span> ibent
+    <header className="fixed top-6 inset-x-4 h-16 w-full bg-[#0B0E24]/30 backdrop-blur-xl shadow-2xl py-6 px-6 rounded-full max-w-7xl mx-auto flex items-center justify-between z-30">
+      <Link href={"/"} className="flex items-center space-x-2">
+        <Image src="https://i.ibb.co.com/KvS16Tt/event-logo.png" width="100" height="100" alt="logo" />
       </Link>
 
       <nav className="hidden md:flex items-center gap-6 text-white">
