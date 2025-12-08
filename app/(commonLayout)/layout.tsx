@@ -1,0 +1,21 @@
+
+import { PublicFooter } from "@/components/shared/PublicFooter";
+import PublicNavbar from "@/components/shared/PublicNavbar";
+import { getUserInfo } from "@/services/auth/getUserInfo";
+import React from "react"
+
+ const CommonLayout = async({children}:{children:React.ReactNode})=>{
+    const userInfo = await getUserInfo();
+    return (
+        <div className="min-h-screen flex flex-col">
+            <PublicNavbar role={userInfo?.role}/>
+             <div className="grow">
+                {children}
+             </div>
+            <PublicFooter/>
+            {/* <Toaster position="top-center" richColors /> */}
+        </div>
+    )
+}
+
+export default CommonLayout;
