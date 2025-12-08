@@ -8,8 +8,7 @@ import { deleteCookie, getCookie } from './services/auth/tokenHandler';
 import { getNewAccessToken } from './services/auth/auth.service';
 
 
-
-
+ 
 // This function can be marked `async` if using `await` inside
 export async function proxy(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
