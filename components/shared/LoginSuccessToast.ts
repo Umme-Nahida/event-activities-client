@@ -8,7 +8,7 @@ const LoginSuccessToast = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  useEffect(() => {
+  useEffect(() => { 
     if (searchParams.get("loggedIn") === "true") {
       toast.success("You have been logged in successfully.");
 

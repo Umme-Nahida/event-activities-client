@@ -27,7 +27,7 @@ const DashboardSidebarContent = ({
   return (
     <div className="hidden md:flex h-full w-64 flex-col border-r bg-card">
       {/* Logo/Brand */}
-      <div className="flex h-16 items-center border-b px-6">
+      <div className="flex h-16 items-center border-b px-6 py-2">
         <Link href={"/"} className="flex items-center space-x-2">
           <Image src={"https://i.ibb.co.com/TMvPSyKT/Logo.png"} width="100" height="100" alt="logo" />
         </Link>
@@ -92,7 +92,7 @@ const DashboardSidebarContent = ({
           <div className="flex-1 overflow-hidden">
             <p className="text-sm font-medium truncate">{userInfo.name}</p>
             <p className="text-xs text-muted-foreground capitalize">
-              {userInfo.role.toLowerCase()}
+              {userInfo && userInfo.role.toLowerCase()}
             </p>
           </div>
         </div>

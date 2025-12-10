@@ -39,8 +39,8 @@ export default async function Navbar({ role = null }) {
   let navItems = [...commonNav];
   console.log("role", role)
 
-  if (role === "guest" || null) navItems.push({ label: "Become a Host", href: "/become-host" });
-  if (role === "guest" || null) navItems.push({ label: "Login", href: "/login" }, { label: "Register", href: "/register" });
+  if (role === null) navItems.push({ label: "Become a Host", href: "/become-host" });
+  if (role === null) navItems.push({ label: "Login", href: "/login" }, { label: "Register", href: "/register" });
 
   if (role === "USER") navItems = [...commonNav, ...userNav];
   if (role === "HOST") navItems = [...commonNav, ...hostNav];

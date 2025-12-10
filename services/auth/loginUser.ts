@@ -134,7 +134,6 @@ export const loginUser = async (_currentState: any, formData: any): Promise<any>
         if (typeof digest === 'string' && digest.startsWith('NEXT_REDIRECT')) {
             throw error;
         }
-        console.log("AMI ERROR", error);
     
         return { success: false, message:`${process.env.NODE_ENV === 'development' ? error : 'login failed, you might have entered wrong credentials'}`};
     } 
