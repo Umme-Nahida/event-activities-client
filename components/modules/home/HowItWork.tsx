@@ -18,7 +18,7 @@ const HowItWork = () => {
                                     How it works
                                 </p>
                                 <h2 className="text-3xl lg:text-5xl font-bold leading-tight">
-                                    Explore The Digital <br /> Business Conference
+                                   Fast & Easy Event Participation
                                 </h2>
                                 <p className="mt-6 text-blue-200 leading-relaxed">
                                     Quickly join or create events in three easy steps.

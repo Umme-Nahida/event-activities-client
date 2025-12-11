@@ -122,13 +122,7 @@ export const userNavItems: NavSection[] = [
 export const adminNavItems: NavSection[] = [
   {
     title: "User Management",
-    items: [
-      {
-        title: "Manage Admins",
-        href: "/admin/dashboard/admins",
-        icon: "Shield",
-        roles: ["ADMIN"]
-      },
+    items: [ 
       {
         title: "Manage Hosts",
         href: "/admin/dashboard/hosts",

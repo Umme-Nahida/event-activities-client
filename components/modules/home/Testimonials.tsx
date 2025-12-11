@@ -1,23 +1,106 @@
-import React from 'react'
-import { testimonials } from './Home'
+"use client";
 
-const Testimonials = () => {
+import { useState } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { getIconComponent } from "@/lib/icon-mapper";
+
+const testimonials = [
+  {
+    name: "Marry Jaen",
+    role: "Web Designer",
+    rating: 4.5,
+    img: "/images/user1.jpg",
+    text: "Using Advanced Technological Infrastructure And Expert Staff, We Deliver Comprehensive Transportation Services Efficiently Services Broad With Innovation.",
+  },
+  {
+    name: "Alen Walker",
+    role: "Manager",
+    rating: 4.5,
+    img: "/images/user2.jpg",
+    text: "Thanks To Our Advanced Technological Infrastructure And Expert Staff, We Offer Extensive Transportation Services Seamlessly.",
+  },
+  {
+    name: "Abdur Rashid",
+    role: "Founder & CEO",
+    rating: 4.5,
+    img: "/images/user3.jpg",
+    text: "With Our Advanced Technological Infrastructure And Expert Staff, We Offer Wide–Ranging Transportation Services Through Innovative Systems.",
+  }
+];
+
+export default function Testimonials() {
+  const [index, setIndex] = useState(0);
+
+  const next = () => {
+    setIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prev = () => {
+    setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  // const rightArrow = getIconComponent("corner-down-right")
+  // const leftArrow = getIconComponent("corner-down-left")
+
   return (
-    <div>
-         {/* Testimonials */}
-                  <section className="mt-10">
-                    <h2 className="text-xl font-semibold">What people say</h2>
-                    <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-                      {testimonials.map((t) => (
-                        <blockquote key={t.id} className="bg-white p-6 rounded-xl shadow-sm">
-                          <p className="text-gray-700">"{t.text}"</p>
-                          <cite className="block mt-4 text-sm font-semibold">— {t.name}</cite>
-                        </blockquote>
-                      ))}
-                    </div>
-                  </section>
-    </div>
-  )
-}
+    <div className="w-full py-20 bg-white">
+      <div className="text-center mb-10">
+        <h2 className="text-sm font-semibold text-blue-600 tracking-wide">
+          TESTIMONIALS
+        </h2>
+        <h1 className="text-4xl font-bold text-gray-900 mt-1">
+          What Our Clients Says
+        </h1>
+      </div>
 
-export default Testimonials
+      {/* Cards */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        {testimonials.map((item, i) => (
+          <div
+            key={i}
+            className={`p-6 rounded-2xl shadow-sm border transition 
+            ${i === index ? "bg-white" : "bg-blue-50"}`}
+          >
+            <div className="flex items-center mb-3">
+              <img
+                src={item.img}
+                alt=""
+                className="w-14 h-14 rounded-full object-cover mr-3"
+              />
+            </div>
+
+            <p className="text-gray-700 leading-relaxed mb-4">{item.text}</p>
+
+            <h3 className="font-bold text-gray-900 text-lg">{item.name}</h3>
+            <p className="text-sm text-gray-500">{item.role}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Pagination Bar */}
+      <div className="flex justify-center items-center gap-4 mt-10">
+        <button
+          onClick={prev}
+          className="p-3 rounded-full bg-blue-100 hover:bg-blue-200 transition"
+        >
+          <ArrowLeft className="text-blue-600" size={20} />
+        </button>
+
+        <div className="w-80 h-[2px] bg-gray-300 relative">
+          <div
+            className="absolute top-0 h-full bg-blue-600"
+            style={{ width: `${((index + 1) / testimonials.length) * 100}%` }}
+          />
+        </div>
+
+        <button
+          onClick={next}
+          className="p-3 rounded-full bg-blue-100 hover:bg-blue-200 transition"
+        >
+          <ArrowRight className="text-blue-600" size={20} />
+           
+        </button>
+      </div>
+    </div>
+  );
+}

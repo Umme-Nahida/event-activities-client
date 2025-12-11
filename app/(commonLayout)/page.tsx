@@ -2,6 +2,7 @@
 import Banner from "@/components/modules/Home/Banner";
 import EventHomepage from "@/components/modules/Home/Home";
 import HowItWork from "@/components/modules/Home/HowItWork";
+import Testimonials from "@/components/modules/Home/Testimonials";
 import TopHosts from "@/components/modules/Home/TopHosts";
 import { getUserInfo } from "@/services/auth/getUserInfo";
 import Head from "next/head";
@@ -27,7 +28,7 @@ export default async function Home() {
         <Banner />
         <HowItWork />
         <TopHosts />
-        
+        <Testimonials />
         
       </main>
     </>
