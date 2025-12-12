@@ -1,8 +1,13 @@
-import React from 'react'
+import PaymentOverview from '@/components/modules/host/paymentOverview'
+import { paymentOverview } from '@/services/event/allEvents'
 
-const HostPayment = () => {
+const HostPayment = async() => {
+
+  const data = await paymentOverview()
   return (
-    <div>HostPayment</div>
+    <div>
+      <PaymentOverview data={data.data}/>
+    </div>
   )
 }
 

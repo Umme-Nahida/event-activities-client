@@ -13,6 +13,14 @@ export async function getAllEvents(queryString?:string) {
 }
 
 
+export async function paymentOverview() {
+  
+  const res = await serverFetch.get(`/admin/payment-overview`);
+
+  if (!res.ok) return { data: [], meta: {} };
+  return await res.json();
+}
+
 export async function adminGetUsers(query: any) {
   const qs = new URLSearchParams(query).toString();
   
