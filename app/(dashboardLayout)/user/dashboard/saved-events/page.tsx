@@ -1,8 +1,15 @@
+import SavedEventsTable from '@/components/modules/User/SavedEvent'
+import RefreshButton from '@/components/shared/RefreshButton'
+import { getSavedEvents } from '@/services/savedEvents/savedEventActions'
 import React from 'react'
 
-const SavedEvents = () => {
+const SavedEvents = async () => {
+  const saveEvents = await getSavedEvents()
   return (
-    <div>SavedEvents</div>
+    <div className='space-y-6'>
+      <RefreshButton />
+      <SavedEventsTable savedEvents={saveEvents.data} />
+    </div>
   )
 }
 
