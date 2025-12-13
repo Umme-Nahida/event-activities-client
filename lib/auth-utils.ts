@@ -1,5 +1,5 @@
 // user role base access control added here
-export type UserRole = 'ADMIN' | 'HOST' | 'USER';
+export type UserRole = 'ADMIN' | 'HOST' | 'USER'; 
 
 export type RouteConfig = {
     exact: string[];

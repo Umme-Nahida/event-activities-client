@@ -61,7 +61,7 @@ const Banner = () => {
             <ContainerDiv>
                 <section className="bg-white rounded-2xl -mt-6 p-6 shadow-sm">
                     <div className="flex items-center justify-between">
-                        <h2 className="text-xl font-semibold">Featured & Upcoming Near You</h2>
+                        <h2 className="text-xl font-semibold">Browse Our Featured & Popular Events</h2>
                         <a href="/events" className="text-sm text-sky-600 hover:underline">See all events</a>
                     </div>
 

@@ -11,4 +11,4 @@ const HostPayment = async() => {
   )
 }
 
-export default HostPayment
+export default HostPayment;

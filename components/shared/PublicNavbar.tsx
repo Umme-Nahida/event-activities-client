@@ -11,9 +11,12 @@ const commonNav = [
   { label: "Explore Events", href: "/events" },
 ];
 
+interface NavbarProps {
+  role: "USER" | "HOST" | "ADMIN" | null;
+}
 
 
-export default async function Navbar({ role = null }) {
+export default async function Navbar({ role = null}:NavbarProps) {
 
   const defaultDashboard = getDefaultDashboardRoute(role);
 
@@ -36,11 +39,13 @@ export default async function Navbar({ role = null }) {
     { label: "My Profile", href: defaultDashboard },
   ];
 
+  console.log("user role:", role)
+
   let navItems = [...commonNav];
   console.log("role", role)
 
-  if (role === null) navItems.push({ label: "Become a Host", href: "/become-host" });
-  if (role === null) navItems.push({ label: "Login", href: "/login" }, { label: "Register", href: "/register" });
+  if (role === null || undefined) navItems.push({ label: "Become a Host", href: "/become-host" });
+  if (role === null || undefined) navItems.push({ label: "Login", href: "/login" }, { label: "Register", href: "/register" });
 
   if (role === "USER") navItems = [...commonNav, ...userNav];
   if (role === "HOST") navItems = [...commonNav, ...hostNav];

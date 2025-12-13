@@ -1,5 +1,7 @@
 
+import EventCategories from "@/components/modules/Event/EventCategories";
 import Banner from "@/components/modules/Home/Banner";
+import ChooseUs from "@/components/modules/Home/ChooseUs";
 import EventHomepage from "@/components/modules/Home/Home";
 import HowItWork from "@/components/modules/Home/HowItWork";
 import Testimonials from "@/components/modules/Home/Testimonials";
@@ -27,6 +29,8 @@ export default async function Home() {
         {/* Main content goes here  */}
         <Banner />
         <HowItWork />
+        <ChooseUs />
+        <EventCategories/>
         <TopHosts />
         <Testimonials />
         

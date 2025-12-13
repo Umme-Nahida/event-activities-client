@@ -31,8 +31,8 @@ export default function TopHosts() {
   return (
     <section className="w-full bg-[#030b3a] bg-gradient-to-b from-[#030b3a] via-[#0b0f4b] to-[#030b3a] py-20">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <p className="text-blue-400 tracking-widest uppercase text-sm mb-2">Our Speakers</p>
-        <h2 className="text-4xl font-bold text-white mb-12">Say Hello to Our Speakers</h2>
+        <p className="text-blue-400 tracking-widest uppercase text-sm mb-2">Our Toprated Hosts</p>
+        <h2 className="text-4xl font-bold text-white mb-12">Say Hello to Our Hosts</h2>
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
