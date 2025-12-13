@@ -1,5 +1,6 @@
 import { sampleEvents } from './Home'
 import ContainerDiv from '../../shared/ContainerDiv'
+import Link from 'next/link'
 
 const Banner = () => {
     return (
@@ -16,12 +17,13 @@ const Banner = () => {
                             </p>
 
                             <div className="mt-8 flex flex-wrap gap-3">
-                                <a
-                                    href="/search"
+                               
+                                <Link href="/search"
                                     className="inline-flex items-center justify-center rounded-md bg-white text-sky-700 px-5 py-3 text-sm font-semibold shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
+                                
                                 >
-                                    Find Activities
-                                </a>
+                                 Explore Events 
+                                </Link>
 
                                 <a
                                     href="/create-event"

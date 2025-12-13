@@ -110,18 +110,18 @@ export default function CreateEventForm() {
             />
 
             {/** -------- BASIC INFO -------- */}
-            <div>
+            <div className="space-y-2">
                 <Label>Event Title *</Label>
                 <Input name="title" required disabled={isPending} />
             </div>
 
-            <div>
+            <div className="space-y-2">
                 <Label>Description *</Label>
                 <Textarea name="description" rows={4} required disabled={isPending} />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
+                <div className="space-y-2">
                     <Label>Category *</Label>
                     <Select value={category} onValueChange={setCategory}>
                         <SelectTrigger>
@@ -137,7 +137,7 @@ export default function CreateEventForm() {
                     </Select>
                 </div>
 
-                <div>
+             <div className="space-y-2">
                     <Label>Status</Label>
                     <Select value={status} onValueChange={setStatus}>
                         <SelectTrigger>
@@ -155,7 +155,7 @@ export default function CreateEventForm() {
             </div>
 
             {/** -------- SCHEDULE -------- */}
-            <div>
+           <div className="space-y-2">
                 <Label>Event Date *</Label>
                 <Popover>
                     <PopoverTrigger asChild>
@@ -175,36 +175,36 @@ export default function CreateEventForm() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
+               <div className="space-y-2">
                     <Label>Start Time *</Label>
                     <Input type="time" name="startTime" required />
                 </div>
 
-                <div>
+               <div className="space-y-2">
                     <Label>End Time *</Label>
                     <Input type="time" name="endTime" required />
                 </div>
             </div>
 
             {/** -------- LOCATION -------- */}
-            <div>
+            <div className="space-y-2">
                 <Label>Location *</Label>
                 <Input name="location" required />
             </div>
 
             {/** -------- TICKET -------- */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div>
+                <div className="space-y-2">
                     <Label>Ticket Price</Label>
                     <Input name="ticketPrice" type="number" defaultValue={0} />
                 </div>
 
-                <div>
+               <div className="space-y-2">
                     <Label>Total Seats *</Label>
                     <Input name="totalSeats" type="number" defaultValue={100} required />
                 </div>
 
-                <div>
+                <div className="space-y-2">
                     <Label>Available Seats</Label>
                     <Input name="availableSeats" type="number" defaultValue={100} />
                 </div>
@@ -228,9 +228,9 @@ export default function CreateEventForm() {
                         <Image
                             src={imagePreview}
                             alt="Preview"
-                            width={600}
-                            height={400}
-                            className="rounded-lg"
+                            width={300}
+                            height={100}
+                            className="rounded-full p-2"
                         />
 
                         <Button
