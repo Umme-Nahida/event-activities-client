@@ -1,12 +1,23 @@
-import { getUserInfo } from '@/services/auth/getUserInfo';
-import React from 'react'
+import MyProfilePage from '@/components/modules/MyProfile/MyProfile';
+import { getMyProfile } from '@/services/auth/auth.service';
 
 const MyProfile = async() => {
-    const userInfo = await getUserInfo();
-    console.log("userInfo",userInfo)
+    const userInfo = await getMyProfile();
   return (
-    <div>MyProfile</div>
+    <div>
+      <MyProfilePage myInfo={userInfo.data}></MyProfilePage>
+    </div>
   )
 }
 
 export default MyProfile
+
+// import MyProfile from "@/components/modules/MyProfile/MyProfile";
+// import { getUserInfo } from "@/services/auth/getUserInfo";
+
+// const MyProfilePage = async () => {
+//   const userInfo = await getUserInfo();
+//   return <MyProfile userInfo={userInfo} />;
+// };
+
+// export default MyProfilePage;

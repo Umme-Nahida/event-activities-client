@@ -1,5 +1,6 @@
 import React from "react";
 import { TrendingUp, Clock, CheckCircle } from "lucide-react";
+import { ChartBarMultiple } from "@/components/shared/BarChart";
 
 // Beautiful Payment Overview UI (React + Tailwind)
 // Use inside any page: <PaymentOverview data={data} />
@@ -35,7 +36,7 @@ export default function PaymentOverview({ data }:{data:any}) {
       <div className="w-full max-w-5xl">
         <h2 className="text-2xl font-bold mb-6">Payment Overview</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {cards.map((card, index) => (
             <div
               key={index}
@@ -51,7 +52,9 @@ export default function PaymentOverview({ data }:{data:any}) {
           ))}
         </div>
 
-        {/* Progress Bar Section */}
+        <ChartBarMultiple></ChartBarMultiple>
+
+        {/* Progress Bar Section
         <div className="mt-10 bg-white border rounded-2xl p-6 shadow">
           <h3 className="text-lg font-semibold mb-4">Revenue Progress</h3>
 
@@ -65,7 +68,7 @@ export default function PaymentOverview({ data }:{data:any}) {
           <div className="mt-3 text-sm text-gray-600">
             Success Rate: <span className="font-semibold">{data.successRate}%</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

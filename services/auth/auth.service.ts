@@ -12,6 +12,7 @@ import { deleteCookie, getCookie, setCookie } from "./tokenHandler";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export async function updateMyProfile(formData: FormData) {
     try {
+        console.log("form", formData)
         // Create a new FormData with the data property
         const uploadFormData = new FormData();
 
@@ -31,8 +32,9 @@ export async function updateMyProfile(formData: FormData) {
         if (file && file instanceof File && file.size > 0) {
             uploadFormData.append('file', file);
         }
+        console.log("upload form data:", uploadFormData)
 
-        const response = await serverFetch.patch(`/user/update-my-profile`, {
+        const response = await serverFetch.patch(`/users/update-my-profile`, {
             body: uploadFormData,
         });
 
@@ -42,6 +44,29 @@ export async function updateMyProfile(formData: FormData) {
             revalidateTag("user-info", { expire: 0 });
         }
         return result;
+    } catch (error: any) {
+        console.log(error);
+        return {
+            success: false,
+            message: `${process.env.NODE_ENV === 'development' ? error.message : 'Something went wrong'}`
+        };
+    }
+}
+
+
+export async function getMyProfile() {
+    try {
+
+        const response = await serverFetch.get(`/users/me`, {
+            next: {
+                tags: ["user-info"], 
+            },
+        });
+
+        const result = await response.json()
+        return result
+
+
     } catch (error: any) {
         console.log(error);
         return {
