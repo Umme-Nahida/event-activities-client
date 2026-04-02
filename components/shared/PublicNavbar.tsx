@@ -9,7 +9,7 @@ import Image from "next/image";
 import { ModeToggle } from "./ModeToggle";
 
 const commonNav = [
-  { label: "Explore Events", href: "/events" },
+  { label: "Explore Events", href: "/events" }
 ];
 
 interface NavbarProps {
